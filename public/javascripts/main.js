@@ -53,10 +53,14 @@ function buildMap(response) {
     var description = $(this).find('Description').html();
     var lat = $(this).find('Latitude').text();
     var lon = $(this).find('Longitude').text();
+    var form = $(this).find('d3p1:FormRowId').text();
+
+    var formData = (form) ? `Record: ${form}` : `No data for this truck`;
 
     var popup = `
       <h1>${title}</h1>
-      ${description}
+      <p>${description}</p>
+      <p>${formData}</p>
     `;
     trucks.push(
       L.marker([lat, lon], {
