@@ -9,15 +9,12 @@ $(document).ready(function() {
 function getMarkers(type, url) {
   $.ajax({
     type: type,
-    url: url,
-    headers: {
-      "Authorization": "Basic dGhlc2hlcmlkYW5wcmVzczoxNDRlZ3Jpbm5lbGw="
-    },
+    url: url.local,
     error: function(err) {
       console.log('Something went wrong:',JSON.stringify(err));
     },
     success: function(response) {
-      buildMap(response)
+      buildMap(response);
     }
   });
 }
@@ -59,6 +56,7 @@ function buildMap(response) {
     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
   });
   var count = 0;
+  console.log(response);
   $(response).find('Point').each(function() {
     var title = $(this).find('Title').text();
     var description = $(this).find('Description p').html();
