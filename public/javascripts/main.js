@@ -84,9 +84,7 @@ function buildMap(response) {
     for (var i = 0; i < object.Days.length; i++) {
       object.Days[i] = (object.Days[i] == ' ') ? 'No day data' : object.Days[i].trim();
     }
-    console.log(object.Days[0]);
     if (object.Days[0] != 'No day data') {
-      console.log('Check');
       for (var i = 0; i < object.Days.length; i++) {
         var truckDay = truckGroups.find(group => group.day == object.Days[i]);
         if (truckDay) {
@@ -112,7 +110,6 @@ function buildMap(response) {
       }
     } else {
       object.Notes = (object.Notes == '') ? 'No details available' : object.Notes;
-      console.log(object.Notes);
       var row = (count % 2 == 0) ? 'even' : 'odd';
       othersDetail += `
         <div class="other-truck ${row}">
@@ -126,7 +123,6 @@ function buildMap(response) {
   });
   var truckLayer = [], overlayMaps = {};
   for (var i = 0; i < truckGroups.length; i++) {
-    console.log(truckGroups[i].trucks);
     if (truckGroups[i].day != '') {
       truckLayer.push(L.layerGroup(truckGroups[i].trucks));
       overlayMaps[truckGroups[i].day] = truckLayer[truckLayer.length - 1];
