@@ -1,36 +1,22 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ArrayOfPoint xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/MapItFast.Models.Map">
 <Point>
 <CanDelete>false</CanDelete>
 <CanEdit>false</CanEdit>
 <Creator>232491d4-a533-4b30-a611-7716ef5c3ad8</Creator>
 <CreatorResolved>Erik Hoversten</CreatorResolved>
-<Description/>
+<Description>
+<p>Days: Tuesday<br />Times: 2-7 p.m.<br />location: Luminous Brewhouse, 504 Broadway St.<br />menu: https://www.bonafidefoodlove.com/<br />notes: </p>
+</Description>
 <DispatchCases xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Fleet" i:nil="true"/>
 <Elevation>0.00</Elevation>
-<Forms xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Form">
-<d3p1:PointForm>
-<d3p1:CanDelete>false</d3p1:CanDelete>
-<d3p1:CanEdit>false</d3p1:CanEdit>
-<d3p1:CreatedOn>2020-05-10T05:27:46</d3p1:CreatedOn>
-<d3p1:Creator>232491d4-a533-4b30-a611-7716ef5c3ad8</d3p1:Creator>
-<d3p1:Files i:nil="true"/>
-<d3p1:FormInfoId>4631</d3p1:FormInfoId>
-<d3p1:FormName>Food_Truck_Tracker</d3p1:FormName>
-<d3p1:FormRowId>1</d3p1:FormRowId>
-<d3p1:LastUpdate>2020-05-10T05:27:46</d3p1:LastUpdate>
-<d3p1:LastUser>232491d4-a533-4b30-a611-7716ef5c3ad8</d3p1:LastUser>
-<d3p1:MapObjectId>270082</d3p1:MapObjectId>
-<d3p1:Operation>I</d3p1:Operation>
-<d3p1:SyncVersion>Ticks_637246852665442597</d3p1:SyncVersion>
-</d3p1:PointForm>
-</Forms>
+<Forms xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Form"/>
 <IconHttpLocation i:nil="true"/>
-<IconId>172</IconId>
-<ItemTime>2020-05-07T11:18:33.55</ItemTime>
-<Latitude>44.80287218</Latitude>
-<Longitude>-106.95338487</Longitude>
-<PointId>270082</PointId>
+<IconId>3</IconId>
+<ItemTime>2020-05-10T08:47:11.813</ItemTime>
+<Latitude>44.80287979</Latitude>
+<Longitude>-106.95342779</Longitude>
+<PointId>270190</PointId>
 <ProjectId>2572</ProjectId>
 <Title>Bonafide</Title>
 <Tracking xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Tracking">
@@ -38,9 +24,9 @@
 <d3p1:LastUser>232491d4-a533-4b30-a611-7716ef5c3ad8</d3p1:LastUser>
 <d3p1:NumFormObjects>0</d3p1:NumFormObjects>
 <d3p1:Operation>U</d3p1:Operation>
-<d3p1:PointId>270082</d3p1:PointId>
+<d3p1:PointId>270190</d3p1:PointId>
 <d3p1:ProjectId>2572</d3p1:ProjectId>
-<d3p1:SyncTime>2020-05-10T06:25:47.627</d3p1:SyncTime>
+<d3p1:SyncTime>2020-05-10T08:49:06.097</d3p1:SyncTime>
 </Tracking>
 </Point>
 <Point>
@@ -48,32 +34,18 @@
 <CanEdit>false</CanEdit>
 <Creator>232491d4-a533-4b30-a611-7716ef5c3ad8</Creator>
 <CreatorResolved>Erik Hoversten</CreatorResolved>
-<Description/>
+<Description>
+<p>Days: Wednesday, Thursday, Friday<br />Times: 7 a.m. to 3 p.m.<br />location: Farmers Coop of Sheridan, 1450 Coffeen Ave.<br />menu: https://www.bonafidefoodlove.com/<br />notes: </p>
+</Description>
 <DispatchCases xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Fleet" i:nil="true"/>
 <Elevation>0.00</Elevation>
-<Forms xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Form">
-<d3p1:PointForm>
-<d3p1:CanDelete>false</d3p1:CanDelete>
-<d3p1:CanEdit>false</d3p1:CanEdit>
-<d3p1:CreatedOn>2020-05-10T05:37:14</d3p1:CreatedOn>
-<d3p1:Creator>232491d4-a533-4b30-a611-7716ef5c3ad8</d3p1:Creator>
-<d3p1:Files i:nil="true"/>
-<d3p1:FormInfoId>4631</d3p1:FormInfoId>
-<d3p1:FormName>Food_Truck_Tracker</d3p1:FormName>
-<d3p1:FormRowId>8</d3p1:FormRowId>
-<d3p1:LastUpdate>2020-05-10T05:37:14</d3p1:LastUpdate>
-<d3p1:LastUser>232491d4-a533-4b30-a611-7716ef5c3ad8</d3p1:LastUser>
-<d3p1:MapObjectId>270083</d3p1:MapObjectId>
-<d3p1:Operation>I</d3p1:Operation>
-<d3p1:SyncVersion>Ticks_637246858344795987</d3p1:SyncVersion>
-</d3p1:PointForm>
-</Forms>
+<Forms xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Form"/>
 <IconHttpLocation i:nil="true"/>
-<IconId>172</IconId>
-<ItemTime>2020-05-07T11:18:33.58</ItemTime>
-<Latitude>44.78284786</Latitude>
-<Longitude>-106.94268822</Longitude>
-<PointId>270083</PointId>
+<IconId>3</IconId>
+<ItemTime>2020-05-10T08:47:11.83</ItemTime>
+<Latitude>44.78286309</Latitude>
+<Longitude>-106.94292426</Longitude>
+<PointId>270191</PointId>
 <ProjectId>2572</ProjectId>
 <Title>Bonafide</Title>
 <Tracking xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Tracking">
@@ -81,9 +53,9 @@
 <d3p1:LastUser>232491d4-a533-4b30-a611-7716ef5c3ad8</d3p1:LastUser>
 <d3p1:NumFormObjects>0</d3p1:NumFormObjects>
 <d3p1:Operation>U</d3p1:Operation>
-<d3p1:PointId>270083</d3p1:PointId>
+<d3p1:PointId>270191</d3p1:PointId>
 <d3p1:ProjectId>2572</d3p1:ProjectId>
-<d3p1:SyncTime>2020-05-10T06:26:27.847</d3p1:SyncTime>
+<d3p1:SyncTime>2020-05-10T08:49:53.24</d3p1:SyncTime>
 </Tracking>
 </Point>
 <Point>
@@ -91,32 +63,18 @@
 <CanEdit>false</CanEdit>
 <Creator>232491d4-a533-4b30-a611-7716ef5c3ad8</Creator>
 <CreatorResolved>Erik Hoversten</CreatorResolved>
-<Description/>
+<Description>
+<p>Days: <br />Times: <br />location: <br />menu: <br />notes: </p>
+</Description>
 <DispatchCases xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Fleet" i:nil="true"/>
 <Elevation>0.00</Elevation>
-<Forms xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Form">
-<d3p1:PointForm>
-<d3p1:CanDelete>false</d3p1:CanDelete>
-<d3p1:CanEdit>false</d3p1:CanEdit>
-<d3p1:CreatedOn>2020-05-10T05:33:09</d3p1:CreatedOn>
-<d3p1:Creator>232491d4-a533-4b30-a611-7716ef5c3ad8</d3p1:Creator>
-<d3p1:Files i:nil="true"/>
-<d3p1:FormInfoId>4631</d3p1:FormInfoId>
-<d3p1:FormName>Food_Truck_Tracker</d3p1:FormName>
-<d3p1:FormRowId>4</d3p1:FormRowId>
-<d3p1:LastUpdate>2020-05-10T05:33:09</d3p1:LastUpdate>
-<d3p1:LastUser>232491d4-a533-4b30-a611-7716ef5c3ad8</d3p1:LastUser>
-<d3p1:MapObjectId>270084</d3p1:MapObjectId>
-<d3p1:Operation>I</d3p1:Operation>
-<d3p1:SyncVersion>Ticks_637246855894581653</d3p1:SyncVersion>
-</d3p1:PointForm>
-</Forms>
+<Forms xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Form"/>
 <IconHttpLocation i:nil="true"/>
-<IconId>172</IconId>
-<ItemTime>2020-05-07T11:18:33.613</ItemTime>
-<Latitude>44.79575406</Latitude>
-<Longitude>-106.95400714</Longitude>
-<PointId>270084</PointId>
+<IconId>3</IconId>
+<ItemTime>2020-05-10T08:47:11.83</ItemTime>
+<Latitude>44.79461204</Latitude>
+<Longitude>-106.95690393</Longitude>
+<PointId>270192</PointId>
 <ProjectId>2572</ProjectId>
 <Title>The Brinton Bistro</Title>
 <Tracking xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Tracking">
@@ -124,9 +82,9 @@
 <d3p1:LastUser>232491d4-a533-4b30-a611-7716ef5c3ad8</d3p1:LastUser>
 <d3p1:NumFormObjects>0</d3p1:NumFormObjects>
 <d3p1:Operation>U</d3p1:Operation>
-<d3p1:PointId>270084</d3p1:PointId>
+<d3p1:PointId>270192</d3p1:PointId>
 <d3p1:ProjectId>2572</d3p1:ProjectId>
-<d3p1:SyncTime>2020-05-10T06:27:53.6</d3p1:SyncTime>
+<d3p1:SyncTime>2020-05-10T08:57:48</d3p1:SyncTime>
 </Tracking>
 </Point>
 <Point>
@@ -134,32 +92,18 @@
 <CanEdit>false</CanEdit>
 <Creator>232491d4-a533-4b30-a611-7716ef5c3ad8</Creator>
 <CreatorResolved>Erik Hoversten</CreatorResolved>
-<Description/>
+<Description>
+<p>Days: <br />Times: <br />location: <br />menu: https://www.facebook.com/goburgerwagon/<br />notes: </p>
+</Description>
 <DispatchCases xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Fleet" i:nil="true"/>
 <Elevation>0.00</Elevation>
-<Forms xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Form">
-<d3p1:PointForm>
-<d3p1:CanDelete>false</d3p1:CanDelete>
-<d3p1:CanEdit>false</d3p1:CanEdit>
-<d3p1:CreatedOn>2020-05-10T05:36:14</d3p1:CreatedOn>
-<d3p1:Creator>232491d4-a533-4b30-a611-7716ef5c3ad8</d3p1:Creator>
-<d3p1:Files i:nil="true"/>
-<d3p1:FormInfoId>4631</d3p1:FormInfoId>
-<d3p1:FormName>Food_Truck_Tracker</d3p1:FormName>
-<d3p1:FormRowId>7</d3p1:FormRowId>
-<d3p1:LastUpdate>2020-05-10T05:36:14</d3p1:LastUpdate>
-<d3p1:LastUser>232491d4-a533-4b30-a611-7716ef5c3ad8</d3p1:LastUser>
-<d3p1:MapObjectId>270085</d3p1:MapObjectId>
-<d3p1:Operation>I</d3p1:Operation>
-<d3p1:SyncVersion>Ticks_637246857743687989</d3p1:SyncVersion>
-</d3p1:PointForm>
-</Forms>
+<Forms xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Form"/>
 <IconHttpLocation i:nil="true"/>
-<IconId>172</IconId>
-<ItemTime>2020-05-07T11:18:33.627</ItemTime>
-<Latitude>44.78466023</Latitude>
-<Longitude>-106.94277405</Longitude>
-<PointId>270085</PointId>
+<IconId>3</IconId>
+<ItemTime>2020-05-10T08:47:11.847</ItemTime>
+<Latitude>44.78465262</Latitude>
+<Longitude>-106.94283843</Longitude>
+<PointId>270193</PointId>
 <ProjectId>2572</ProjectId>
 <Title>Burger Wagon</Title>
 <Tracking xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Tracking">
@@ -167,9 +111,9 @@
 <d3p1:LastUser>232491d4-a533-4b30-a611-7716ef5c3ad8</d3p1:LastUser>
 <d3p1:NumFormObjects>0</d3p1:NumFormObjects>
 <d3p1:Operation>U</d3p1:Operation>
-<d3p1:PointId>270085</d3p1:PointId>
+<d3p1:PointId>270193</d3p1:PointId>
 <d3p1:ProjectId>2572</d3p1:ProjectId>
-<d3p1:SyncTime>2020-05-10T06:26:37.393</d3p1:SyncTime>
+<d3p1:SyncTime>2020-05-10T08:49:36.85</d3p1:SyncTime>
 </Tracking>
 </Point>
 <Point>
@@ -177,32 +121,18 @@
 <CanEdit>false</CanEdit>
 <Creator>232491d4-a533-4b30-a611-7716ef5c3ad8</Creator>
 <CreatorResolved>Erik Hoversten</CreatorResolved>
-<Description/>
+<Description>
+<p>Days: Monday, Tuesday, Wednesday, Thursday, Friday<br />Times: 10AM TO 7PM<br />location: 1520 Coffeen Ave<br />menu: http://www.elrodeomexicanfoodwy.com/<br />notes: Saturday, 11AM to 3PM</p>
+</Description>
 <DispatchCases xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Fleet" i:nil="true"/>
 <Elevation>0.00</Elevation>
-<Forms xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Form">
-<d3p1:PointForm>
-<d3p1:CanDelete>false</d3p1:CanDelete>
-<d3p1:CanEdit>false</d3p1:CanEdit>
-<d3p1:CreatedOn>2020-05-10T05:39:10</d3p1:CreatedOn>
-<d3p1:Creator>232491d4-a533-4b30-a611-7716ef5c3ad8</d3p1:Creator>
-<d3p1:Files i:nil="true"/>
-<d3p1:FormInfoId>4631</d3p1:FormInfoId>
-<d3p1:FormName>Food_Truck_Tracker</d3p1:FormName>
-<d3p1:FormRowId>9</d3p1:FormRowId>
-<d3p1:LastUpdate>2020-05-10T05:39:10</d3p1:LastUpdate>
-<d3p1:LastUser>232491d4-a533-4b30-a611-7716ef5c3ad8</d3p1:LastUser>
-<d3p1:MapObjectId>270086</d3p1:MapObjectId>
-<d3p1:Operation>I</d3p1:Operation>
-<d3p1:SyncVersion>Ticks_637246859503417205</d3p1:SyncVersion>
-</d3p1:PointForm>
-</Forms>
+<Forms xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Form"/>
 <IconHttpLocation i:nil="true"/>
-<IconId>172</IconId>
-<ItemTime>2020-05-07T11:18:33.643</ItemTime>
-<Latitude>44.78171319</Latitude>
-<Longitude>-106.94265604</Longitude>
-<PointId>270086</PointId>
+<IconId>3</IconId>
+<ItemTime>2020-05-10T08:47:11.847</ItemTime>
+<Latitude>44.78165989</Latitude>
+<Longitude>-106.94324612</Longitude>
+<PointId>270194</PointId>
 <ProjectId>2572</ProjectId>
 <Title>El Rodeo</Title>
 <Tracking xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Tracking">
@@ -210,9 +140,9 @@
 <d3p1:LastUser>232491d4-a533-4b30-a611-7716ef5c3ad8</d3p1:LastUser>
 <d3p1:NumFormObjects>0</d3p1:NumFormObjects>
 <d3p1:Operation>U</d3p1:Operation>
-<d3p1:PointId>270086</d3p1:PointId>
+<d3p1:PointId>270194</d3p1:PointId>
 <d3p1:ProjectId>2572</d3p1:ProjectId>
-<d3p1:SyncTime>2020-05-10T06:26:16.83</d3p1:SyncTime>
+<d3p1:SyncTime>2020-05-10T08:50:09.99</d3p1:SyncTime>
 </Tracking>
 </Point>
 <Point>
@@ -220,16 +150,18 @@
 <CanEdit>false</CanEdit>
 <Creator>232491d4-a533-4b30-a611-7716ef5c3ad8</Creator>
 <CreatorResolved>Erik Hoversten</CreatorResolved>
-<Description/>
+<Description>
+<p>Days: <br />Times: <br />location: <br />menu: https://www.facebook.com/firedup307/<br />notes: </p>
+</Description>
 <DispatchCases xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Fleet" i:nil="true"/>
 <Elevation>0.00</Elevation>
 <Forms xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Form"/>
 <IconHttpLocation i:nil="true"/>
-<IconId>172</IconId>
-<ItemTime>2020-05-07T11:18:33.643</ItemTime>
-<Latitude>44.79755080</Latitude>
-<Longitude>-106.95763349</Longitude>
-<PointId>270087</PointId>
+<IconId>3</IconId>
+<ItemTime>2020-05-10T08:47:11.86</ItemTime>
+<Latitude>44.79551043</Latitude>
+<Longitude>-106.96138858</Longitude>
+<PointId>270195</PointId>
 <ProjectId>2572</ProjectId>
 <Title>Fired Up Food Truck</Title>
 <Tracking xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Tracking">
@@ -237,9 +169,9 @@
 <d3p1:LastUser>232491d4-a533-4b30-a611-7716ef5c3ad8</d3p1:LastUser>
 <d3p1:NumFormObjects>0</d3p1:NumFormObjects>
 <d3p1:Operation>U</d3p1:Operation>
-<d3p1:PointId>270087</d3p1:PointId>
+<d3p1:PointId>270195</d3p1:PointId>
 <d3p1:ProjectId>2572</d3p1:ProjectId>
-<d3p1:SyncTime>2020-05-10T06:27:09.77</d3p1:SyncTime>
+<d3p1:SyncTime>2020-05-10T08:55:53.997</d3p1:SyncTime>
 </Tracking>
 </Point>
 <Point>
@@ -247,102 +179,76 @@
 <CanEdit>false</CanEdit>
 <Creator>232491d4-a533-4b30-a611-7716ef5c3ad8</Creator>
 <CreatorResolved>Erik Hoversten</CreatorResolved>
-<Description/>
-<DispatchCases xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Fleet" i:nil="true"/>
-<Elevation>0.00</Elevation>
-<Forms xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Form">
-<d3p1:PointForm>
-<d3p1:CanDelete>false</d3p1:CanDelete>
-<d3p1:CanEdit>false</d3p1:CanEdit>
-<d3p1:CreatedOn>2020-05-10T05:31:35</d3p1:CreatedOn>
-<d3p1:Creator>232491d4-a533-4b30-a611-7716ef5c3ad8</d3p1:Creator>
-<d3p1:Files i:nil="true"/>
-<d3p1:FormInfoId>4631</d3p1:FormInfoId>
-<d3p1:FormName>Food_Truck_Tracker</d3p1:FormName>
-<d3p1:FormRowId>2</d3p1:FormRowId>
-<d3p1:LastUpdate>2020-05-10T05:31:35</d3p1:LastUpdate>
-<d3p1:LastUser>232491d4-a533-4b30-a611-7716ef5c3ad8</d3p1:LastUser>
-<d3p1:MapObjectId>270088</d3p1:MapObjectId>
-<d3p1:Operation>I</d3p1:Operation>
-<d3p1:SyncVersion>Ticks_637246854955340637</d3p1:SyncVersion>
-</d3p1:PointForm>
-</Forms>
-<IconHttpLocation i:nil="true"/>
-<IconId>172</IconId>
-<ItemTime>2020-05-07T11:18:33.66</ItemTime>
-<Latitude>44.80078632</Latitude>
-<Longitude>-106.95363163</Longitude>
-<PointId>270088</PointId>
-<ProjectId>2572</ProjectId>
-<Title>WYO Thai Food</Title>
-<Tracking xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Tracking">
-<d3p1:IsDirty>false</d3p1:IsDirty>
-<d3p1:LastUser>232491d4-a533-4b30-a611-7716ef5c3ad8</d3p1:LastUser>
-<d3p1:NumFormObjects>0</d3p1:NumFormObjects>
-<d3p1:Operation>U</d3p1:Operation>
-<d3p1:PointId>270088</d3p1:PointId>
-<d3p1:ProjectId>2572</d3p1:ProjectId>
-<d3p1:SyncTime>2020-05-10T06:26:02.033</d3p1:SyncTime>
-</Tracking>
-</Point>
-<Point>
-<CanDelete>false</CanDelete>
-<CanEdit>false</CanEdit>
-<Creator>232491d4-a533-4b30-a611-7716ef5c3ad8</Creator>
-<CreatorResolved>Erik Hoversten</CreatorResolved>
-<Description/>
-<DispatchCases xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Fleet" i:nil="true"/>
-<Elevation>0.00</Elevation>
-<Forms xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Form">
-<d3p1:PointForm>
-<d3p1:CanDelete>false</d3p1:CanDelete>
-<d3p1:CanEdit>false</d3p1:CanEdit>
-<d3p1:CreatedOn>2020-05-10T05:32:22</d3p1:CreatedOn>
-<d3p1:Creator>232491d4-a533-4b30-a611-7716ef5c3ad8</d3p1:Creator>
-<d3p1:Files i:nil="true"/>
-<d3p1:FormInfoId>4631</d3p1:FormInfoId>
-<d3p1:FormName>Food_Truck_Tracker</d3p1:FormName>
-<d3p1:FormRowId>3</d3p1:FormRowId>
-<d3p1:LastUpdate>2020-05-10T05:32:22</d3p1:LastUpdate>
-<d3p1:LastUser>232491d4-a533-4b30-a611-7716ef5c3ad8</d3p1:LastUser>
-<d3p1:MapObjectId>270089</d3p1:MapObjectId>
-<d3p1:Operation>I</d3p1:Operation>
-<d3p1:SyncVersion>Ticks_637246855422695468</d3p1:SyncVersion>
-</d3p1:PointForm>
-</Forms>
-<IconHttpLocation i:nil="true"/>
-<IconId>172</IconId>
-<ItemTime>2020-05-07T11:18:33.66</ItemTime>
-<Latitude>44.79828167</Latitude>
-<Longitude>-106.95666790</Longitude>
-<PointId>270089</PointId>
-<ProjectId>2572</ProjectId>
-<Title>WYO Thai Food</Title>
-<Tracking xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Tracking">
-<d3p1:IsDirty>false</d3p1:IsDirty>
-<d3p1:LastUser>232491d4-a533-4b30-a611-7716ef5c3ad8</d3p1:LastUser>
-<d3p1:NumFormObjects>0</d3p1:NumFormObjects>
-<d3p1:Operation>U</d3p1:Operation>
-<d3p1:PointId>270089</d3p1:PointId>
-<d3p1:ProjectId>2572</d3p1:ProjectId>
-<d3p1:SyncTime>2020-05-10T06:26:50.113</d3p1:SyncTime>
-</Tracking>
-</Point>
-<Point>
-<CanDelete>false</CanDelete>
-<CanEdit>false</CanEdit>
-<Creator>232491d4-a533-4b30-a611-7716ef5c3ad8</Creator>
-<CreatorResolved>Erik Hoversten</CreatorResolved>
-<Description/>
+<Description>
+<p>Days: Tuesday, Friday<br />Times: 11 a.m. to 2 p.m.<br />location: Black Tooth Brewing Co., 312 Broadway St.<br />menu: https://www.facebook.com/WYOThaiFood/<br />notes: </p>
+</Description>
 <DispatchCases xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Fleet" i:nil="true"/>
 <Elevation>0.00</Elevation>
 <Forms xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Form"/>
 <IconHttpLocation i:nil="true"/>
-<IconId>172</IconId>
-<ItemTime>2020-05-07T11:18:33.677</ItemTime>
-<Latitude>44.79723105</Latitude>
-<Longitude>-106.95576667</Longitude>
-<PointId>270090</PointId>
+<IconId>3</IconId>
+<ItemTime>2020-05-10T08:47:11.86</ItemTime>
+<Latitude>44.80070258</Latitude>
+<Longitude>-106.95362091</Longitude>
+<PointId>270196</PointId>
+<ProjectId>2572</ProjectId>
+<Title>WYO Thai Food</Title>
+<Tracking xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Tracking">
+<d3p1:IsDirty>false</d3p1:IsDirty>
+<d3p1:LastUser>232491d4-a533-4b30-a611-7716ef5c3ad8</d3p1:LastUser>
+<d3p1:NumFormObjects>0</d3p1:NumFormObjects>
+<d3p1:Operation>U</d3p1:Operation>
+<d3p1:PointId>270196</d3p1:PointId>
+<d3p1:ProjectId>2572</d3p1:ProjectId>
+<d3p1:SyncTime>2020-05-10T08:48:53.037</d3p1:SyncTime>
+</Tracking>
+</Point>
+<Point>
+<CanDelete>false</CanDelete>
+<CanEdit>false</CanEdit>
+<Creator>232491d4-a533-4b30-a611-7716ef5c3ad8</Creator>
+<CreatorResolved>Erik Hoversten</CreatorResolved>
+<Description>
+<p>Days: Wednesday, Thursday<br />Times: 11 a.m. to 2 p.m.<br />location: <br />menu: https://www.facebook.com/WYOThaiFood/<br />notes: Delivery only</p>
+</Description>
+<DispatchCases xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Fleet" i:nil="true"/>
+<Elevation>0.00</Elevation>
+<Forms xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Form"/>
+<IconHttpLocation i:nil="true"/>
+<IconId>3</IconId>
+<ItemTime>2020-05-10T08:47:11.877</ItemTime>
+<Latitude>44.79468817</Latitude>
+<Longitude>-106.95943593</Longitude>
+<PointId>270197</PointId>
+<ProjectId>2572</ProjectId>
+<Title>WYO Thai Food</Title>
+<Tracking xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Tracking">
+<d3p1:IsDirty>false</d3p1:IsDirty>
+<d3p1:LastUser>232491d4-a533-4b30-a611-7716ef5c3ad8</d3p1:LastUser>
+<d3p1:NumFormObjects>0</d3p1:NumFormObjects>
+<d3p1:Operation>U</d3p1:Operation>
+<d3p1:PointId>270197</d3p1:PointId>
+<d3p1:ProjectId>2572</d3p1:ProjectId>
+<d3p1:SyncTime>2020-05-10T08:56:42.827</d3p1:SyncTime>
+</Tracking>
+</Point>
+<Point>
+<CanDelete>false</CanDelete>
+<CanEdit>false</CanEdit>
+<Creator>232491d4-a533-4b30-a611-7716ef5c3ad8</Creator>
+<CreatorResolved>Erik Hoversten</CreatorResolved>
+<Description>
+<p>Days: <br />Times: <br />location: <br />menu: <br />notes: Reopening May 26</p>
+</Description>
+<DispatchCases xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Fleet" i:nil="true"/>
+<Elevation>0.00</Elevation>
+<Forms xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Form"/>
+<IconHttpLocation i:nil="true"/>
+<IconId>3</IconId>
+<ItemTime>2020-05-10T08:47:11.877</ItemTime>
+<Latitude>44.79552566</Latitude>
+<Longitude>-106.95698976</Longitude>
+<PointId>270198</PointId>
 <ProjectId>2572</ProjectId>
 <Title>Kona Ice of Big Horn</Title>
 <Tracking xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Tracking">
@@ -350,9 +256,9 @@
 <d3p1:LastUser>232491d4-a533-4b30-a611-7716ef5c3ad8</d3p1:LastUser>
 <d3p1:NumFormObjects>0</d3p1:NumFormObjects>
 <d3p1:Operation>U</d3p1:Operation>
-<d3p1:PointId>270090</d3p1:PointId>
+<d3p1:PointId>270198</d3p1:PointId>
 <d3p1:ProjectId>2572</d3p1:ProjectId>
-<d3p1:SyncTime>2020-05-10T06:27:18.66</d3p1:SyncTime>
+<d3p1:SyncTime>2020-05-10T08:57:33.347</d3p1:SyncTime>
 </Tracking>
 </Point>
 <Point>
@@ -360,32 +266,18 @@
 <CanEdit>false</CanEdit>
 <Creator>232491d4-a533-4b30-a611-7716ef5c3ad8</Creator>
 <CreatorResolved>Erik Hoversten</CreatorResolved>
-<Description/>
+<Description>
+<p>Days: <br />Times: <br />location: <br />menu: <br />notes: Reopening May 26</p>
+</Description>
 <DispatchCases xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Fleet" i:nil="true"/>
 <Elevation>0.00</Elevation>
-<Forms xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Form">
-<d3p1:PointForm>
-<d3p1:CanDelete>false</d3p1:CanDelete>
-<d3p1:CanEdit>false</d3p1:CanEdit>
-<d3p1:CreatedOn>2020-05-10T05:35:32</d3p1:CreatedOn>
-<d3p1:Creator>232491d4-a533-4b30-a611-7716ef5c3ad8</d3p1:Creator>
-<d3p1:Files i:nil="true"/>
-<d3p1:FormInfoId>4631</d3p1:FormInfoId>
-<d3p1:FormName>Food_Truck_Tracker</d3p1:FormName>
-<d3p1:FormRowId>6</d3p1:FormRowId>
-<d3p1:LastUpdate>2020-05-10T05:35:32</d3p1:LastUpdate>
-<d3p1:LastUser>232491d4-a533-4b30-a611-7716ef5c3ad8</d3p1:LastUser>
-<d3p1:MapObjectId>270091</d3p1:MapObjectId>
-<d3p1:Operation>I</d3p1:Operation>
-<d3p1:SyncVersion>Ticks_637246857328834400</d3p1:SyncVersion>
-</d3p1:PointForm>
-</Forms>
+<Forms xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Form"/>
 <IconHttpLocation i:nil="true"/>
-<IconId>172</IconId>
-<ItemTime>2020-05-07T11:18:33.677</ItemTime>
-<Latitude>44.79614996</Latitude>
-<Longitude>-106.95769786</Longitude>
-<PointId>270091</PointId>
+<IconId>3</IconId>
+<ItemTime>2020-05-10T08:47:11.893</ItemTime>
+<Latitude>44.79458158</Latitude>
+<Longitude>-106.95823431</Longitude>
+<PointId>270199</PointId>
 <ProjectId>2572</ProjectId>
 <Title>Hetty's Pizza</Title>
 <Tracking xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Tracking">
@@ -393,9 +285,9 @@
 <d3p1:LastUser>232491d4-a533-4b30-a611-7716ef5c3ad8</d3p1:LastUser>
 <d3p1:NumFormObjects>0</d3p1:NumFormObjects>
 <d3p1:Operation>U</d3p1:Operation>
-<d3p1:PointId>270091</d3p1:PointId>
+<d3p1:PointId>270199</d3p1:PointId>
 <d3p1:ProjectId>2572</d3p1:ProjectId>
-<d3p1:SyncTime>2020-05-10T06:27:35.77</d3p1:SyncTime>
+<d3p1:SyncTime>2020-05-10T08:57:15.563</d3p1:SyncTime>
 </Tracking>
 </Point>
 <Point>
@@ -403,16 +295,18 @@
 <CanEdit>false</CanEdit>
 <Creator>232491d4-a533-4b30-a611-7716ef5c3ad8</Creator>
 <CreatorResolved>Erik Hoversten</CreatorResolved>
-<Description/>
+<Description>
+<p>Days: <br />Times: <br />location: <br />menu: <br />notes: On the road with no immediate Sheridan County trips</p>
+</Description>
 <DispatchCases xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Fleet" i:nil="true"/>
 <Elevation>0.00</Elevation>
 <Forms xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Form"/>
 <IconHttpLocation i:nil="true"/>
-<IconId>172</IconId>
-<ItemTime>2020-05-07T11:18:33.69</ItemTime>
-<Latitude>44.79569316</Latitude>
-<Longitude>-106.95553064</Longitude>
-<PointId>270092</PointId>
+<IconId>3</IconId>
+<ItemTime>2020-05-10T08:47:11.893</ItemTime>
+<Latitude>44.79543430</Latitude>
+<Longitude>-106.95821285</Longitude>
+<PointId>270200</PointId>
 <ProjectId>2572</ProjectId>
 <Title>On the Hook Fish and Chips</Title>
 <Tracking xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Tracking">
@@ -420,9 +314,9 @@
 <d3p1:LastUser>232491d4-a533-4b30-a611-7716ef5c3ad8</d3p1:LastUser>
 <d3p1:NumFormObjects>0</d3p1:NumFormObjects>
 <d3p1:Operation>U</d3p1:Operation>
-<d3p1:PointId>270092</d3p1:PointId>
+<d3p1:PointId>270200</d3p1:PointId>
 <d3p1:ProjectId>2572</d3p1:ProjectId>
-<d3p1:SyncTime>2020-05-10T06:27:44.097</d3p1:SyncTime>
+<d3p1:SyncTime>2020-05-10T08:57:02.203</d3p1:SyncTime>
 </Tracking>
 </Point>
 <Point>
@@ -430,32 +324,18 @@
 <CanEdit>false</CanEdit>
 <Creator>232491d4-a533-4b30-a611-7716ef5c3ad8</Creator>
 <CreatorResolved>Erik Hoversten</CreatorResolved>
-<Description/>
+<Description>
+<p>Days: <br />Times: <br />location: <br />menu: <br />notes: To be announced</p>
+</Description>
 <DispatchCases xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Fleet" i:nil="true"/>
 <Elevation>0.00</Elevation>
-<Forms xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Form">
-<d3p1:PointForm>
-<d3p1:CanDelete>false</d3p1:CanDelete>
-<d3p1:CanEdit>false</d3p1:CanEdit>
-<d3p1:CreatedOn>2020-05-10T05:33:43</d3p1:CreatedOn>
-<d3p1:Creator>232491d4-a533-4b30-a611-7716ef5c3ad8</d3p1:Creator>
-<d3p1:Files i:nil="true"/>
-<d3p1:FormInfoId>4631</d3p1:FormInfoId>
-<d3p1:FormName>Food_Truck_Tracker</d3p1:FormName>
-<d3p1:FormRowId>5</d3p1:FormRowId>
-<d3p1:LastUpdate>2020-05-10T05:33:43</d3p1:LastUpdate>
-<d3p1:LastUser>232491d4-a533-4b30-a611-7716ef5c3ad8</d3p1:LastUser>
-<d3p1:MapObjectId>270093</d3p1:MapObjectId>
-<d3p1:Operation>I</d3p1:Operation>
-<d3p1:SyncVersion>Ticks_637246856233495936</d3p1:SyncVersion>
-</d3p1:PointForm>
-</Forms>
+<Forms xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Form"/>
 <IconHttpLocation i:nil="true"/>
-<IconId>172</IconId>
-<ItemTime>2020-05-07T11:18:33.69</ItemTime>
-<Latitude>44.79814463</Latitude>
-<Longitude>-106.95407152</Longitude>
-<PointId>270093</PointId>
+<IconId>3</IconId>
+<ItemTime>2020-05-10T08:47:11.907</ItemTime>
+<Latitude>44.79557134</Latitude>
+<Longitude>-106.95950031</Longitude>
+<PointId>270201</PointId>
 <ProjectId>2572</ProjectId>
 <Title>Stoked</Title>
 <Tracking xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Tracking">
@@ -463,9 +343,9 @@
 <d3p1:LastUser>232491d4-a533-4b30-a611-7716ef5c3ad8</d3p1:LastUser>
 <d3p1:NumFormObjects>0</d3p1:NumFormObjects>
 <d3p1:Operation>U</d3p1:Operation>
-<d3p1:PointId>270093</d3p1:PointId>
+<d3p1:PointId>270201</d3p1:PointId>
 <d3p1:ProjectId>2572</d3p1:ProjectId>
-<d3p1:SyncTime>2020-05-10T06:27:00.957</d3p1:SyncTime>
+<d3p1:SyncTime>2020-05-10T08:56:30.703</d3p1:SyncTime>
 </Tracking>
 </Point>
 <Point>
@@ -473,16 +353,18 @@
 <CanEdit>false</CanEdit>
 <Creator>232491d4-a533-4b30-a611-7716ef5c3ad8</Creator>
 <CreatorResolved>Erik Hoversten</CreatorResolved>
-<Description/>
+<Description>
+<p>Days: <br />Times: <br />location: <br />menu: <br />notes: Temporarily closed</p>
+</Description>
 <DispatchCases xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Fleet" i:nil="true"/>
 <Elevation>0.00</Elevation>
 <Forms xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Form"/>
 <IconHttpLocation i:nil="true"/>
-<IconId>172</IconId>
-<ItemTime>2020-05-07T11:18:33.707</ItemTime>
-<Latitude>44.79651540</Latitude>
-<Longitude>-106.95332050</Longitude>
-<PointId>270094</PointId>
+<IconId>3</IconId>
+<ItemTime>2020-05-10T08:47:11.907</ItemTime>
+<Latitude>44.79467295</Latitude>
+<Longitude>-106.96136713</Longitude>
+<PointId>270202</PointId>
 <ProjectId>2572</ProjectId>
 <Title>Wicked Smoke</Title>
 <Tracking xmlns:d3p1="http://schemas.datacontract.org/2004/07/MapItFast.Models.Tracking">
@@ -490,9 +372,9 @@
 <d3p1:LastUser>232491d4-a533-4b30-a611-7716ef5c3ad8</d3p1:LastUser>
 <d3p1:NumFormObjects>0</d3p1:NumFormObjects>
 <d3p1:Operation>U</d3p1:Operation>
-<d3p1:PointId>270094</d3p1:PointId>
+<d3p1:PointId>270202</d3p1:PointId>
 <d3p1:ProjectId>2572</d3p1:ProjectId>
-<d3p1:SyncTime>2020-05-10T06:27:27.003</d3p1:SyncTime>
+<d3p1:SyncTime>2020-05-10T08:56:15.857</d3p1:SyncTime>
 </Tracking>
 </Point>
 </ArrayOfPoint>
