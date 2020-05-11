@@ -3,7 +3,7 @@ $(document).ready(function() {
     "local": "/xml/food-trucks.xml",
     "remote": "https://mapitfast.agterra.com/api/Points/?projectId=2572"
   };
-  getMarkers('GET', url.local);
+  getMarkers('GET', url.remote);
 });
 
 function getMarkers(type, url) {
