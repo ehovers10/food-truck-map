@@ -1,15 +1,14 @@
 $(document).ready(function() {
   var url = {
-    "local": "/xml/food-trucks.xml",
-    "remote": "https://mapitfast.agterra.com/api/Points/?projectId=2572"
+    "local": "/data/truck-data.json"
   };
-  getMarkers('GET', url.remote);
+  getMarkers('GET', url.local);
 });
 
 function getMarkers(type, url) {
   $.ajax({
     type: type,
-    url: url.local,
+    url: url,
     error: function(err) {
       console.log('Something went wrong:',JSON.stringify(err));
     },
@@ -37,15 +36,8 @@ function buildMap(response) {
     shadowSize:   [50, 64], // size of the shadow
     iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
     shadowAnchor: [4, 62],  // the same for the shadow
-    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
-  });
-  var greenIcon = L.icon({
-    iconUrl: '/images/Food-Truck-green.svg',
-    iconSize:     [50, 50], // size of the icon
-    shadowSize:   [50, 64], // size of the shadow
-    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-    shadowAnchor: [4, 62],  // the same for the shadow
-    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+    popupAnchor:  [-3, -76],
+    className: 'marker' // point from which the popup should open relative to the iconAnchor
   });
   var blueIcon = L.icon({
     iconUrl: '/images/Food-Truck-blue.svg',
@@ -56,14 +48,14 @@ function buildMap(response) {
     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
   });
   var count = 0;
-  console.log(response);
-  $(response).find('Point').each(function() {
-    var title = $(this).find('Title').text();
-    var description = $(this).find('Description p').html();
-    var lat = $(this).find('Latitude').text();
-    var lon = $(this).find('Longitude').text();
+  for (var p = 0; p < response.length; p++) {
+    var title = response[p].Title;
+    var description = response[p].Description.replace(/<\/*p>/g,'');
+    var lat = response[p].Latitude;
+    var lon = response[p].Longitude;
 
-    var elements = description.split('<br xmlns=\"http://schemas.datacontract.org/2004/07/MapItFast.Models.Map\"/>');
+    var elements = description.split('<br />');
+    console.log(elements);
 
     var object = {},label = '';
     for (var i = 0; i < elements.length; i++) {
@@ -90,7 +82,7 @@ function buildMap(response) {
             L.marker([lat, lon], {
               title: title,
               alt: title,
-              icon: greenIcon
+              icon: blackIcon
             }).bindPopup(popup)
           );
         } else {
@@ -100,7 +92,7 @@ function buildMap(response) {
               L.marker([lat, lon], {
                 title: title,
                 alt: title,
-                icon: greenIcon
+                icon: blackIcon
               }).bindPopup(popup)
             ],
           });
@@ -118,7 +110,7 @@ function buildMap(response) {
       `;
       count++;
     }
-  });
+  }
   var truckLayer = [], overlayMaps = {};
   for (var i = 0; i < truckGroups.length; i++) {
     if (truckGroups[i].day != '') {
@@ -150,13 +142,13 @@ function buildMap(response) {
   L.Control.Branding = L.Control.extend({
     onAdd: function(map) {
       var wrap = L.DomUtil.create('div','branding');
+      var title = L.DomUtil.create('div','title',wrap);
       var brands = L.DomUtil.create('div','brands',wrap);
       var brand1 = L.DomUtil.create('div','brand1',brands);
       var brand2 = L.DomUtil.create('div','brand2',brands);
-      var title = L.DomUtil.create('div','title',brand2);
-      var brand3 = L.DomUtil.create('div','brand3',brand2);
-      var img1 = L.DomUtil.create('img','logo1',brand1);
-      var power = L.DomUtil.create('div','powered',brand3);
+      var brand3 = L.DomUtil.create('div','brand3',brands);
+      var img1 = L.DomUtil.create('img','logo1',brand2);
+      var power = L.DomUtil.create('div','powered',brand1);
       var img2 = L.DomUtil.create('img','logo2',brand3);
       return wrap;
     },
@@ -201,16 +193,21 @@ function buildMap(response) {
   L.control.othertrucks({ position: 'topright' }).addTo(map);
 
   $('.map-title').html('<a href="#">Other Local Trucks <i class="fas fa-info-circle"></i></a>');
-  $('.day-select').append('<h2>Day Selector</h2>');
-  var count = 0;
+
   for (var i = 0; i < truckGroups.length; i++) {
     if (truckGroups[i].day != '') {
-      var row = (count % 2 == 0) ? 'even' : 'odd';
-      $('.day-select').append(`<a href="#" class="day-toggle ${row}" data-day="${truckGroups[i].day}">${truckGroups[i].day}</a>`);
-      count++;
+      var order = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'].indexOf(truckGroups[i].day);
+      console.log(order);
+      $('.day-select').append(`<a href="#" class="day-toggle" data-order="${order}" data-day="${truckGroups[i].day}">${truckGroups[i].day}</a>`);
+      var newOrder = $('.day-select a').sort(function(a,b) {
+        if (a.dataset.order > b.dataset.order) return 1;
+        if (b.dataset.order > a.dataset.order) return -1;
+        return 0;
+      });
+      $('.day-select').html(newOrder);
     }
   }
-
+  $('.day-select').prepend('<h2>Day Selector</h2>');
   $('.branding .logo1').attr('src','/images/press.png');
   $('.branding .logo2').attr('src','/images/agterra.png');
   $('.branding .title').text('Food Truck Finder');
@@ -237,6 +234,7 @@ function buildMap(response) {
     for (var i = 0; i < truckMarkers.trucks.length; i++) {
       console.log(truckMarkers.trucks[i].getIcon());
       truckMarkers.trucks[i].setIcon(greenIcon);
+      console.log(truckMarkers.trucks[i].getIcon());
     }
     return false;
   });

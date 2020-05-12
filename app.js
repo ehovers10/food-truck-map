@@ -3,9 +3,25 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var less = require('less-middleware');
+var axios = require('axios');
+var fs = require('fs');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+axios({
+  method: 'GET',
+  url: 'https://mapitfast.agterra.com/api/Points/?projectId=2572',
+  headers: {'Authorization': 'Basic ZWhvdmVyc3RlbjpEeWw0biZHdTU='}
+})
+  .then(res => {
+    console.log(`statusCode: ${res.statusCode}`)
+    console.log(res)
+    fs.writeFile('./public/data/truck-data.json', JSON.stringify(res.data), function(err) {
+      if (err) return console.log(err);
+      console.log('Truck data gathered');
+    });
+  })
+  .catch(error => {
+    console.error(error)
+  });
 
 var app = express();
 
@@ -22,18 +38,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', function(req, res) {
   res.render('index', { title: 'Food Truck Tracker'});
 });
-
-function getItems(items) {
-  var store = [];
-  for (i = 0; i < items.length; i++) {
-    var title = items[i].getElementsByTagName('Title')[0].childNodes[0].nodeValue;
-    var description = items[i].getElementsByTagName('Description')[0].childNodes[0].nodeValue;;
-    var lat = items[i].getElementsByTagName('Latitude')[0].childNodes[0].nodeValue;;
-    var lon = items[i].getElementsByTagName('Longitude')[0].childNodes[0].nodeValue;;
-    store.push({"title": title, "description": description, "lat": lat, "lon": lon});
-  }
-  return store;
-}
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
