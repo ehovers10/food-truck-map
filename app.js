@@ -12,8 +12,7 @@ axios({
   headers: {'Authorization': 'Basic ZWhvdmVyc3RlbjpEeWw0biZHdTU='}
 })
   .then(res => {
-    console.log(`statusCode: ${res.statusCode}`)
-    console.log(res)
+    console.log(`statusCode: ${res.status}`)
     fs.writeFile('./public/data/truck-data.json', JSON.stringify(res.data), function(err) {
       if (err) return console.log(err);
       console.log('Truck data gathered');
