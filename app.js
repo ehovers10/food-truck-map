@@ -37,6 +37,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', function(req, res) {
   res.render('index', { title: 'Food Truck Tracker'});
 });
+app.post('/finder-email', function(req, res) {
+  console.log(JSON.stringify(res));
+  fs.writeFile('/email-data.html', JSON.stringify(res.content), function(err) {
+    if (err) return console.log(err);
+    console.log('Email data received');
+  });
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
