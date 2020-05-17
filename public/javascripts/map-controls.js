@@ -14,11 +14,7 @@ L.control.branding = function(opts) {
 // Other Trucks Control
 L.Control.OtherTrucks = L.Control.extend({
   onAdd: function(map) {
-    var titleText = 'Food Truck Finder';
-    var wrap = L.DomUtil.create('div','other-trucks');
-    var title = L.DomUtil.create('div','map-title',wrap);
-    var others = L.DomUtil.create('div','others',wrap)
-    return wrap;
+    return L.DomUtil.create('div','other-wrap');
   },
   onRemove: function(map) {
       // Nothing to do here
@@ -31,9 +27,7 @@ L.control.othertrucks = function(opts) {
 // Day Selector Control
 L.Control.LayerView = L.Control.Layers.extend({
   onAdd: function(map) {
-    var wrap = L.DomUtil.create('div','day-select');
-
-    return wrap;
+    return L.DomUtil.create('div','day-wrap');
   },
   onRemove: function(map) {
       // Nothing to do here
@@ -44,18 +38,14 @@ L.control.layer = function(opts) {
 }
 
 // Build control content
-function buildControls(branding,daySelect,otherTrucks) {
+function buildControls(controls, others) {
   // Branding Control
-  $('.brand-wrap').html(branding);
+  $('.brand-wrap').html(controls.attrib);
+
+  // Other trucks control
+  $('.other-wrap').html(controls.other);
+  $('.other-wrap .body').html(others);
 
   // Day Selector Control
-  var days = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
-  for (var i = 0; i < days.length; i++) {
-      $('.day-select').append(`<a href="#" class="day-toggle" data-day="${days[i]}">${days[i]}</a>`);
-  }
-  $('.day-select').prepend('<h2>Day Selector</h2>');
-
-  // Other Trucks Control
-  $('.map-title').html('<a href="#"><span>Other Local Trucks</span> <i class="fas fa-info-circle"></i></a>');
-  $('.others').css('display','none').html(otherTrucks);
+  $('.day-wrap').html(controls.days);
 }

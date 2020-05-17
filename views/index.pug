@@ -2,28 +2,20 @@ doctype html
 html
   head
     title= title
+    meta(name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
     link(rel='shortcut icon' type='image/png' href='/images/food-truck.svg')
     link(rel='stylesheet' href='https://unpkg.com/leaflet@1.6.0/dist/leaflet.css'
      integrity='sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=='
      crossorigin='')
     link(rel='stylesheet' href='/stylesheets/style.css')
-    link(href='https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css' media='all' rel='stylesheet')
-    link(href='https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css' media='all' rel='stylesheet')
-    link(href='https://kit-free.fontawesome.com/releases/latest/css/free.min.css' media='all' rel='stylesheet')
 
-    script(src='https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.8.0.js')
-    script(src='https://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.22/jquery-ui.js')
-    script(src='https://unpkg.com/leaflet@1.6.0/dist/leaflet.js'
-     integrity='sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=='
-     crossorigin='')
-    script(src='/javascripts/main.js')
-    script(src='/javascripts/map-controls.js')
   body
     main#wrap
       #mymap
 
+    aside#controls
       #attrib
-        .branding
+        .control.branding
           .title Food Truck Finder
           .brands
             .powered Presented by
@@ -34,16 +26,37 @@ html
           .attrib
             span
               span Food Truck Data compiled by
+              span &nbsp;
               a(href='https://www.thesheridanpress.com') The Sheridan Press
-              span .&nbsp;
+              span .
             br
             span
-              span Map powered by&nbsp;
+              span Map powered by
+              span &nbsp;
               a(href='https://www.agterra.com') AgTerra Technologies
-              span ,&nbsp;
-              a(href='https://www.mapbox.com/') Mapbox
-              span &nbsp;and&nbsp;
-              a(href='https://www.openstreetmap.org/') OpenStreetMap
               span .
+      #other
+        .control.other-trucks
+          a.title(href='#') 
+            span Other Local Food Trucks
+            span.close x
+          
+          #other-body.body
+      #days
+        .control.day-select
+          h2 Day Selector
+          each day in ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
+            a.day-toggle(href='#' data-day='' + day)= day
+
     aside#marker
       include food-truck.html
+
+    footer
+      script(src='https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.8.0.js')
+      script(src='https://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.22/jquery-ui.js')
+      script(src='https://unpkg.com/leaflet@1.6.0/dist/leaflet.js'
+       integrity='sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=='
+       crossorigin='')
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/OverlappingMarkerSpiderfier-Leaflet/0.2.6/oms.min.js')
+      script(src='/javascripts/main.js')
+      script(src='/javascripts/map-controls.js')

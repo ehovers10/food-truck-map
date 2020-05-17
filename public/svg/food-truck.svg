@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0">
+  <defs id="food-truck-defs">
+    <filter id="blurMe">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+    <radialGradient id="radial-gradient" cx="35.76" cy="47.75" r="49.74" gradientTransform="matrix(0.96, 0.27, -0.15, 0.52, 8.27, 13.45)" gradientUnits="userSpaceOnUse">
+      <stop offset="0.13" stop-color="#0072bc"/>
+      <stop offset="0.35" stop-color="#0374bc"/>
+      <stop offset="0.53" stop-color="#0d7bbc"/>
+      <stop offset="0.69" stop-color="#1f85bc"/>
+      <stop offset="0.85" stop-color="#3795bc"/>
+      <stop offset="0.88" stop-color="#3c98bc"/>
+    </radialGradient>
+  </defs>
+  <symbol id="highlight-img" viewBox="0 0 100 100">
+    <title>Highlight</title>
+    <circle cx="50" cy="50" r="45" fill="#EEF593"/>
+  </symbol>
+  <symbol id="food-truck-img" viewBox="0 0 100 100">
+    <title>Food Truck</title>
+    <path fill="#0072bc" d="M82.65,50.38a4.8,4.8,0,0,1-2.51-2.6L73.8,29.17a3,3,0,0,0-2.64-1.9H15.82a2,2,0,0,0-2,2v37a2,2,0,0,0,2,2h2.32c1.1,0,2-.28,1.93-.62v-.32a7,7,0,1,1,14,0v.32c0,.34.83.62,1.93.62H66.56c1.1,0,2-.28,1.93-.62v-.32a7,7,0,1,1,14,0v.32c0,.34.78.62,1.81.62a2,2,0,0,0,1.88-2V53.71A3.11,3.11,0,0,0,84.31,51Zm-38.3-4.63a2,2,0,0,1-2,2H23.73a2,2,0,0,1-2-2V35.4a2,2,0,0,1,2-2H42.35a2,2,0,0,1,2,2Zm26.26,2a2,2,0,0,1-2-2V35.4a1.85,1.85,0,0,1,1.62-2,2.71,2.71,0,0,1,2.23,1.91l3.4,10.53a1.37,1.37,0,0,1-1.38,1.91Z"/>
+    <circle fill="#0072bc" cx="27.23" cy="67.23" r="5.5"/>
+    <circle fill="#0072bc" cx="75.34" cy="67.23" r="5.5"/>
+    <text class="cls-3" transform="translate(38.34 63.21) rotate(-18.37)">
+      <tspan class="cls-4">F</tspan>
+      <tspan x="5.4" y="0">OOD</tspan>
+    </text>
+  </symbol>
+</svg>
