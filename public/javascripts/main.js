@@ -102,6 +102,19 @@ function buildMap(response, controls) {
   L.control.othertrucks({ position: 'topright' }).addTo(map);
   buildControls(controls, othersDetail);
 
+
+  if ($(window).width() < 800) {
+    $('.day-select .body').slideUp(1000);
+    $('.day-select .close').toggleClass('open');
+    $('.other-trucks .body').slideUp(1000);
+    $('.other-trucks .close').toggleClass('open');
+  }
+
+  $('.day-select .title').click(function() {
+    $('.day-select .body').slideToggle(1000);
+    $('.day-select .close').toggleClass('open');
+    return false;
+  });
   $('.day-toggle').click(function() {
     var day = $(this).attr('data-day');
     $(this).siblings().removeClass('active');
@@ -119,8 +132,6 @@ function buildMap(response, controls) {
   var n = d.getDay() - 1;
   $('.day-toggle').eq(n).click();
 
-  $('.other-trucks .body').slideUp(1000);
-  $('.other-trucks .close').fadeOut(1000);
   var elem = L.DomUtil.get('other-body');
   L.DomEvent.on(elem, 'mousewheel', L.DomEvent.stopPropagation);
   $('.other-trucks .title').click(function() {

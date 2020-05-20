@@ -78,11 +78,8 @@ a {
     display: flex;
   }
 }
-.other-trucks {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-
+.toggler {
+  
   .title {
     background: fade(@press-brand,80%);
     color: #000000;
@@ -96,21 +93,22 @@ a {
     background: #ffffff;
     padding: 0 3px;
     border-radius: 3px;
+
+    &:after {
+      content: 'x';
+    }
+    &.open:after {
+      content: '+';
+    }
   }
   .body {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
     padding-bottom: 5px;
+
     max-height:300px;
     overflow-y: auto;
-
-    .other-truck {
-      display: flex;
-      flex-direction: column;
-      padding: 3px 5px;
-      border-bottom: 1px solid #dddddd;
-    }
 
     &::-webkit-scrollbar {
       width:  10px;
@@ -123,6 +121,18 @@ a {
     &::-webkit-scrollbar-track {
       background: fade(@press-brand,10%);
     }
+  }
+}
+.other-trucks {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  .other-truck {
+    display: flex;
+    flex-direction: column;
+    padding: 3px 5px;
+    border-bottom: 1px solid #dddddd;
   }
 }
 .day-select {
