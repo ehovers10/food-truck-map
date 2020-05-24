@@ -36,19 +36,19 @@ html
               a(href='https://www.agterra.com') AgTerra Technologies
               span .
       #other
-        .control.toggler.other-trucks
+        .control.toggle.other-trucks
           a.title(href='#') 
             span Other Local Food Trucks
-            span.close
-          
+            span.close          
           #other-body.body
+          
       #days
-        .control.toggler.day-select
+        .control.toggle.day-select
           a.title(href='#') 
             span Day Selector
             span.close
           .body
-            a.day-toggle(href='#' data-day='All') All Days
+            a.day-toggle(href='#' data-day='All') All Trucks
             each day in ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
               a.day-toggle(href='#' data-day='' + day)= day
 

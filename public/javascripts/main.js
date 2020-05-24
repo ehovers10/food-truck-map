@@ -103,16 +103,11 @@ function buildMap(response, controls) {
   buildControls(controls, othersDetail);
 
 
-  if ($(window).width() < 800) {
-    $('.day-select .body').slideUp(1000);
-    $('.day-select .close').toggleClass('open');
-    $('.other-trucks .body').slideUp(1000);
-    $('.other-trucks .close').toggleClass('open');
-  }
-
-  $('.day-select .title').click(function() {
-    $('.day-select .body').slideToggle(1000);
-    $('.day-select .close').toggleClass('open');
+  $('.toggle .body').slideUp(1000);
+  $('.toggle .close').fadeOut(1000);
+  $('.toggle .title').click(function() {
+    $(this).siblings('.body').slideToggle(1000);
+    $(this).find('.close').fadeToggle(1000);
     return false;
   });
   $('.day-toggle').click(function() {
@@ -122,8 +117,8 @@ function buildMap(response, controls) {
 
     for (var i = 0; i < trucks.length; i++) {
       $('.leaflet-marker-icon').each(function() {
-        var fill = ($(this).attr('class').includes(day)) ? 1 : 0;
-        $(this).find('.highlight circle').attr('fill-opacity',fill);
+        var fill = ($(this).attr('class').includes(day)) ? 'block' : 'none';
+        $(this).css('display',fill); //.find('.highlight circle').attr('fill',fill);
       });
     }
     return false;
@@ -134,11 +129,7 @@ function buildMap(response, controls) {
 
   var elem = L.DomUtil.get('other-body');
   L.DomEvent.on(elem, 'mousewheel', L.DomEvent.stopPropagation);
-  $('.other-trucks .title').click(function() {
-    $('.other-trucks .body').slideToggle(1000);
-    $('.other-trucks .close').fadeToggle(1000);
-    return false;
-  });
+
 }
 function myIcon(o) {
   var dayClass = [...o].join('-');
