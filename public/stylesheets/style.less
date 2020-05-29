@@ -93,6 +93,18 @@ a {
 
     max-height:300px;
     overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width:  10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: @press-brand;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: fade(@press-brand,10%);
+    }
   }
 }
 .branding {
@@ -120,18 +132,6 @@ a {
     flex-direction: column;
     padding: 3px 5px;
     border-bottom: 1px solid #dddddd;
-  }
-
-  &::-webkit-scrollbar {
-    width:  10px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: @press-brand;
-  }
-
-  &::-webkit-scrollbar-track {
-    background: fade(@press-brand,10%);
   }
 }
 .other-trucks {

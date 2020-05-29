@@ -102,12 +102,13 @@ function buildMap(response, controls) {
   L.control.othertrucks({ position: 'topright' }).addTo(map);
   buildControls(controls, othersDetail);
 
-
-  $('.toggle .body').slideUp(1000);
-  $('.toggle .close').fadeOut(1000);
+  if ($(window).width() < 800) {
+    $('.toggle .body').slideUp(1000);
+    $('.toggle .close').toggleClass('open');
+  }
   $('.toggle .title').click(function() {
     $(this).siblings('.body').slideToggle(1000);
-    $(this).find('.close').fadeToggle(1000);
+    $(this).find('.close').toggleClass('open');
     return false;
   });
   $('.day-toggle').click(function() {
