@@ -40,7 +40,7 @@ L.control.layer = function(opts) {
 // Build control content
 function buildControls(controls, others) {
   // Branding Control
-  $('.brand-wrap').html(controls.attrib);
+  $('.brand-wrap').html(controls.brand);
 
   // Other trucks control
   $('.other-wrap').html(controls.other);

@@ -6,6 +6,20 @@ var less = require('less-middleware');
 var axios = require('axios');
 var fs = require('fs');
 
+/*var Build = require('./builder.js');
+
+var attrib = `
+      <span>Food Truck Data compiled by <a href="https://www.thesheridanpress.com">The Sheridan Press</a></span>
+      <span>Map powered by <a href="https://www.agterra.com">AgTerra Technologies</a></span>
+      <span><a href="https://www.mapbox.com/">Mapbox</a></span>
+      <span><a href="https://www.openstreetmap.org/">OpenStreetMap</a></span>
+    `;
+
+var controls = {
+      "attrib": attrib
+    };
+*/
+
 axios({
   method: 'GET',
   url: 'https://mapitfast.agterra.com/api/Points/?projectId=2572',
@@ -17,6 +31,8 @@ axios({
       if (err) return console.log(err);
       console.log('Truck data gathered');
     });
+    //var data = JSON.stringify(res.data);
+    //Build.map(data,controls);
   })
   .catch(error => {
     console.error(error)
