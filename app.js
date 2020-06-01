@@ -6,37 +6,22 @@ var less = require('less-middleware');
 var axios = require('axios');
 var fs = require('fs');
 
-/*var Build = require('./builder.js');
+var mifAuth = 'ZWhvdmVyc3RlbjpEeWw0biZHdTU=';
 
-var attrib = `
-      <span>Food Truck Data compiled by <a href="https://www.thesheridanpress.com">The Sheridan Press</a></span>
-      <span>Map powered by <a href="https://www.agterra.com">AgTerra Technologies</a></span>
-      <span><a href="https://www.mapbox.com/">Mapbox</a></span>
-      <span><a href="https://www.openstreetmap.org/">OpenStreetMap</a></span>
-    `;
-
-var controls = {
-      "attrib": attrib
-    };
-*/
-
-axios({
-  method: 'GET',
-  url: 'https://mapitfast.agterra.com/api/Points/?projectId=2572',
-  headers: {'Authorization': 'Basic ZWhvdmVyc3RlbjpEeWw0biZHdTU='}
-})
-  .then(res => {
-    console.log(`statusCode: ${res.status}`)
-    fs.writeFile('./public/data/truck-data.json', JSON.stringify(res.data), function(err) {
-      if (err) return console.log(err);
-      console.log('Truck data gathered');
-    });
-    //var data = JSON.stringify(res.data);
-    //Build.map(data,controls);
-  })
-  .catch(error => {
-    console.error(error)
-  });
+var config = {
+  project: {
+    id: '2572',
+    element: 'Points'
+  },
+  primaryMap: {
+    token: 'pk.eyJ1IjoiZWhvdmVyc3RlbiIsImEiOiJjazl6c3dmcjIxYXhwM2xwc2JqOHkyZ2JvIn0.jE9weoaWrmwsOHaaMS8OPw',
+    style: 'ehoversten/ckatrxi2307yk1ipe22lnni9i'
+  },
+  secondaryMap: {
+    token: 'pk.eyJ1IjoiZWhvdmVyc3RlbiIsImEiOiJjazl6c3dmcjIxYXhwM2xwc2JqOHkyZ2JvIn0.jE9weoaWrmwsOHaaMS8OPw',
+    style: 'ehoversten/ckavbtszn43x41is4e428vvrg'
+  }
+}
 
 var app = express();
 
@@ -51,7 +36,22 @@ app.use(less(__dirname + '/public'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', function(req, res) {
-  res.render('index', { title: 'Food Truck Tracker'});
+  res.render('index', { title: 'Food Truck Finder'});
+});
+app.post('/data', function(req,res) {
+  axios({
+      method: 'GET',
+      url: `https://mapitfast.agterra.com/api/${config.project.element}/?projectId=${config.project.id}`,
+      headers: {'Authorization': `Basic ${mifAuth}`}
+    })
+    .then(response => {
+      console.log('Data Acquired');
+      res.json({'data': response.data, 'config': config});
+    })
+    .catch(error => {
+      console.log('Not good');
+      console.error(error);
+    });
 });
 app.post('/finder-email', function(req, res) {
   console.log('Hello world!');

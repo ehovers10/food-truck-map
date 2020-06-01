@@ -3,9 +3,8 @@
 var L = require('leaflet');
 var miniMap = require('leaflet-minimap');
 
-global.buildMap = function (response, controls) {
-  var mapboxToken = `pk.eyJ1IjoiZWhvdmVyc3RlbiIsImEiOiJjazl6dDd4OGQwZ25pM2VuYTZoYm1qNmtsIn0.LysE7jICC_Id3-aFgr9_Bg`;
-  var basemap = `https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}`;
+global.buildMap = function (data, controls, config) {
+  var basemap = `https://api.mapbox.com/styles/v1/{style}/tiles/{z}/{x}/{y}?access_token={accessToken}`
   var attrib = controls.attrib;
   var othersDetail = '';
   var dayGroups = {'All': []};
@@ -16,47 +15,38 @@ global.buildMap = function (response, controls) {
     center: [44.7903547,-106.9516518],
     zoom: 14
   });
-  var mapbox = new L.tileLayer(basemap, {
+  var mainMap = new L.tileLayer(basemap, {
     attribution: attrib,
     maxZoom: 18,
     minZoom: 8,
-    id: 'mapbox/streets-v11',
+    style: config.primaryMap.style,
     tileSize: 512,
     zoomOffset: -1,
-    accessToken: mapboxToken
+    accessToken: config.primaryMap.token
   }).addTo(map);
 
-  for (var p = 0; p < response.length; p++) {
+  for (var p = 0; p < data.length; p++) {
 
-    var truck = parseTruckData(response[p]);
+    var truck = parseTruckData(data[p]);
 
     // Markers
-    var lat = response[p].Latitude;
-    var lon = response[p].Longitude;
+    var lat = data[p].Latitude;
+    var lon = data[p].Longitude;
     
     truck.object.Notes = (truck.object.Notes == '') ? 'No details available' : truck.object.Notes;
     othersDetail += `
       <div class="other-truck">${truck.label}</div>
     `;
-    trucks.push({
-      "days": truck.object.Days,
-      "name": truck.object.name,
-      "other": othersDetail
-    });
 
-    if (truck.object.Location == '') {
+    if (truck.object.Location != '') {
       var location = L.marker([lat, lon], {
         title: truck.object.name,
         alt: truck.object.name,
         desc: truck.label,
         icon: myIcon(truck.object.Days),
         riseOnHover: true
-      }).bindPopup(truck.label);
-      trucks.push({
-        "days": truck.object.Days,
-        "name": truck.object.name,
-        "location": location
-      });
+      }).bindPopup(truck.label).on('click',clickZoom).on('popupclose',goScope);
+
       dayGroups['All'].push(location);
       var days = [...truck.object.Days];
       for (var d = 0; d < days.length; d++) {
@@ -67,11 +57,26 @@ global.buildMap = function (response, controls) {
   for (var day in dayGroups) {
     truckGroups[day] = L.featureGroup(dayGroups[day]);
   }
+  function clickZoom(e) {
+    map.setView(e.target.getLatLng(),16);
+  }
+  function goScope() {
+    var day = $('.day-toggle.active').attr('data-day');
+    var area = truckGroups[day].getBounds();
+    map.addLayer(truckGroups[day]).fitBounds(area);
+  }
 
   //MiniMap
-  var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-  var osm2 = new L.tileLayer(osmUrl, {minZoom: 10, maxZoom: 13, attribution: ''});
-  var miniMap = new L.Control.MiniMap(osm2,{toggleDisplay: true,position: 'bottomleft'}).addTo(map);
+  var mapbox2 = new L.tileLayer(basemap, {
+    attribution: attrib,
+    maxZoom: 18,
+    minZoom: 8,
+    style: config.secondaryMap.style,
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: config.secondaryMap.token
+  });
+  var miniMap = new L.Control.MiniMap(mapbox2,{toggleDisplay: true,position: 'bottomleft'}).addTo(map);
 
   //Day Select
   L.Control.DayView = L.Control.extend({
@@ -99,10 +104,14 @@ global.buildMap = function (response, controls) {
     for (var grp in truckGroups) {
       map.removeLayer(truckGroups[grp]);
     }
-    var area = truckGroups[day].getBounds();
-    map.addLayer(truckGroups[day]).fitBounds(area);
-
+    if (truckGroups[day]) {
+      var area = truckGroups[day].getBounds();
+      map.addLayer(truckGroups[day]).fitBounds(area);
+    }
     $('.leaflet-marker-icon').append($('#marker').html());
+
+    if ($(window).width() < 800) $('.day-select.toggle .title').click();
+
     return false;
   });
 }
