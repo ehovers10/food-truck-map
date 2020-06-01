@@ -5,62 +5,67 @@ html
     meta(name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
     link(rel='shortcut icon' type='image/png' href='/images/food-truck.svg')
     link(rel='stylesheet' href='https://unpkg.com/leaflet@1.6.0/dist/leaflet.css'
-     integrity='sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=='
-     crossorigin='')
+       integrity='sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=='
+       crossorigin='')
     link(rel='stylesheet' href='/stylesheets/style.css')
 
-  body
-    main#wrap
+  body#wrap
+    header.control
+      .title
+        svg(viewBox='0 0 250 15')
+          text(x='0' y='14') Sheridan Area Food Truck Finder
+      a.brand1(href='https://thesheridanpress.com')
+        img(src='/images/press.png' alt='The Sheridan Press')
+      a.brand2(href='https://www.agterra.com')
+        img(src='/images/agterra.png' alt='AgTerra Technologies, Inc.')
+
+    nav.control.toggle
+      a.title(href="#" onclick="return false;") 
+        span.intro Local Food Truck Information
+        span.date
+        i.fas.close
+      .body
+        .other-trucks.element
+          .body
+
+    main.control
+      #loader
+        include AgT.html
       #mymap
 
     aside#controls
       #attrib
-        .control.branding
-          .title Food Truck Finder
-          .brands
-            .powered Presented by
-            a.brand1(href='https://thesheridanpress.com')
-              img(src='/images/press.png' alt='The Sheridan Press')
-            a.brand2(href='https://www.agterra.com')
-              img(src='/images/agterra.png' alt='AgTerra Technologies, Inc.')
-          .attrib
-            span
-              span Food Truck Data compiled by
-              span &nbsp;
-              a(href='https://www.thesheridanpress.com') The Sheridan Press
-              span .
-            br
-            span
-              span Map powered by
-              span &nbsp;
-              a(href='https://www.agterra.com') AgTerra Technologies
-              span .
-      #other
-        .control.toggle.other-trucks
-          a.title(href='#') 
-            span Other Local Food Trucks
-            span.close          
-          #other-body.body
-          
+        span
+          a(href='https://www.mapbox.com/') Mapbox  
+          span |&nbsp;
+        span
+          span Food Truck Data compiled by
+          span &nbsp;
+          a(href='https://www.thesheridanpress.com') The Sheridan Press
+          span .&nbsp;
+        span
+          span Map powered by
+          span &nbsp;
+          a(href='https://www.agterra.com') AgTerra Technologies
+          span &nbsp;of Sheridan, WY.
       #days
         .control.toggle.day-select
           a.title(href='#') 
             span Day Selector
-            span.close
+            i.fas.close
           .body
             a.day-toggle(href='#' data-day='All') All Trucks
-            each day in ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
+            each day in ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
               a.day-toggle(href='#' data-day='' + day)= day
 
     aside#marker
       include food-truck.html
 
     footer
+      link(href='https://fonts.googleapis.com/css2?family=Roboto&display=swap' rel='stylesheet')
       script(src='https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.8.0.js')
       script(src='https://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.22/jquery-ui.js')
-      script(src='https://unpkg.com/leaflet@1.6.0/dist/leaflet.js'
-       integrity='sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=='
-       crossorigin='')
-      script(src='https://cdnjs.cloudflare.com/ajax/libs/OverlappingMarkerSpiderfier-Leaflet/0.2.6/oms.min.js')
+      script(src='https://kit.fontawesome.com/a6b5fe2a26.js')
       script(src='/javascripts/main.js')
-      script(src='/javascripts/map-controls.js')
+      script(src='/javascripts/bundle.js')
+      

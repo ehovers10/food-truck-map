@@ -6,21 +6,24 @@ var less = require('less-middleware');
 var axios = require('axios');
 var fs = require('fs');
 
-axios({
-  method: 'GET',
-  url: 'https://mapitfast.agterra.com/api/Points/?projectId=2572',
-  headers: {'Authorization': 'Basic ZWhvdmVyc3RlbjpEeWw0biZHdTU='}
-})
-  .then(res => {
-    console.log(`statusCode: ${res.status}`)
-    fs.writeFile('./public/data/truck-data.json', JSON.stringify(res.data), function(err) {
-      if (err) return console.log(err);
-      console.log('Truck data gathered');
-    });
-  })
-  .catch(error => {
-    console.error(error)
-  });
+var ParseData = require('./parser.js');
+
+var mifAuth = 'ZWhvdmVyc3RlbjpEeWw0biZHdTU=';
+
+var config = {
+  project: {
+    id: '2572',
+    element: 'Points'
+  },
+  primaryMap: {
+    token: 'pk.eyJ1IjoiZWhvdmVyc3RlbiIsImEiOiJjazl6c3dmcjIxYXhwM2xwc2JqOHkyZ2JvIn0.jE9weoaWrmwsOHaaMS8OPw',
+    style: 'ehoversten/ckatrxi2307yk1ipe22lnni9i'
+  },
+  secondaryMap: {
+    token: 'pk.eyJ1IjoiZWhvdmVyc3RlbiIsImEiOiJjazl6c3dmcjIxYXhwM2xwc2JqOHkyZ2JvIn0.jE9weoaWrmwsOHaaMS8OPw',
+    style: 'ehoversten/ckavbtszn43x41is4e428vvrg'
+  }
+}
 
 var app = express();
 
@@ -35,14 +38,22 @@ app.use(less(__dirname + '/public'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', function(req, res) {
-  res.render('index', { title: 'Food Truck Tracker'});
+  res.render('index', { title: 'Food Truck Finder'});
 });
-app.post('/finder-email', function(req, res) {
-  console.log('Hello world!');
-  fs.writeFile('/email-data.html', JSON.stringify(res.content), function(err) {
-    if (err) return console.log(err);
-    console.log('Email data received');
-  });
+app.post('/data', function(req,res) {
+  axios({
+      method: 'GET',
+      url: `https://mapitfast.agterra.com/api/${config.project.element}/?projectId=${config.project.id}`,
+      headers: {'Authorization': `Basic ${mifAuth}`}
+    })
+    .then(response => {
+      var parsed = ParseData(response.data);
+      res.json({'data': parsed, 'config': config});
+    })
+    .catch(error => {
+      console.log('Not good');
+      console.error(error);
+    });
 });
 
 // catch 404 and forward to error handler
