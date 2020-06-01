@@ -76,7 +76,7 @@ global.buildMap = function (data, controls, config) {
     zoomOffset: -1,
     accessToken: config.secondaryMap.token
   });
-  if ($(window).width() < 800) var miniMap = new L.Control.MiniMap(mapbox2,{toggleDisplay: true,position: 'bottomleft'}).addTo(map);
+  if ($(window).width() > 800) var miniMap = new L.Control.MiniMap(mapbox2,{toggleDisplay: true,position: 'bottomleft'}).addTo(map);
 
   //Day Select
   L.Control.DayView = L.Control.extend({
