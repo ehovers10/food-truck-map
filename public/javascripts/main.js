@@ -30,6 +30,7 @@ $(document).ready(function() {
       if ($(window).width() < 800) {
         $('.day-select.toggle > .body').slideUp(500);
         $('.day-select.toggle .close').addClass('fa-angle-up');
+        $('.day-wrap').css('margin-bottom','35px');
       } else {
         $('.day-select.toggle .close').addClass('fa-angle-down');
       }
