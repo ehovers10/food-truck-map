@@ -24,7 +24,7 @@ function getMarkers(type, url, controls) {
       var n = d.getDay() + 1;
       var weekOf = new Date(d - (d.getDay() * 1000 * 3600 * 24));
       var formattedWeek = (weekOf.getMonth() + 1) + '/' + weekOf.getDate() + '/' + weekOf.getFullYear();
-      $('nav .title span').append(': Week of ' + formattedWeek);
+      $('nav .title .intro').append(' - Week of ' + formattedWeek);
       $('.day-toggle').eq(n).click();
       $('.toggle .title').click(function() {
         $(this).siblings('.body').slideToggle(1000);

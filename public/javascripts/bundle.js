@@ -76,7 +76,7 @@ global.buildMap = function (data, controls, config) {
     zoomOffset: -1,
     accessToken: config.secondaryMap.token
   });
-  var miniMap = new L.Control.MiniMap(mapbox2,{toggleDisplay: true,position: 'bottomleft'}).addTo(map);
+  if ($(window).width() < 800) var miniMap = new L.Control.MiniMap(mapbox2,{toggleDisplay: true,position: 'bottomleft'}).addTo(map);
 
   //Day Select
   L.Control.DayView = L.Control.extend({
@@ -90,7 +90,7 @@ global.buildMap = function (data, controls, config) {
   L.control.days = function(opts) {
     return new L.Control.DayView(opts);
   }
-  L.control.days({ position: 'topleft' }).addTo(map);
+  L.control.days({ position: 'bottomleft' }).addTo(map);
   L.control.zoom({ position: 'topright' });
 
   $('.day-wrap').html(controls.days);

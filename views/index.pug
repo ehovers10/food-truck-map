@@ -4,6 +4,9 @@ html
     title= title
     meta(name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
     link(rel='shortcut icon' type='image/png' href='/images/food-truck.svg')
+    link(rel='stylesheet' href='https://unpkg.com/leaflet@1.6.0/dist/leaflet.css'
+       integrity='sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=='
+       crossorigin='')
     link(rel='stylesheet' href='/stylesheets/style.css')
 
   body#wrap
@@ -18,7 +21,8 @@ html
 
     nav.control.toggle
       a.title(href="#" onclick="return false;") 
-        span Local Food Truck Information
+        span.intro Local Food Truck Information
+        span.date
         i.fas.close
       .body
         .other-trucks.element
@@ -57,9 +61,7 @@ html
       include food-truck.html
 
     footer
-      link(rel='stylesheet' href='https://unpkg.com/leaflet@1.6.0/dist/leaflet.css'
-       integrity='sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=='
-       crossorigin='')
+      link(href='https://fonts.googleapis.com/css2?family=Roboto&display=swap' rel='stylesheet')
       script(src='https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.8.0.js')
       script(src='https://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.22/jquery-ui.js')
       script(src='https://kit.fontawesome.com/a6b5fe2a26.js')
