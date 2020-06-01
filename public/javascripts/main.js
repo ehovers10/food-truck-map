@@ -13,7 +13,7 @@ $(document).ready(function() {
     },
     success: function(response) {
       $('nav.toggle > .body').slideUp(500);
-      $('nav.toggle .close').addClass('fa-angle-down');
+      $('nav.toggle .close').addClass('cls-down');
       buildMap(response.data, controls, response.config);
       $('#loader').addClass('hide-svg');
       var d = new Date();
@@ -24,15 +24,15 @@ $(document).ready(function() {
       $('.day-toggle').eq(n).click();
       $('.toggle .title').click(function() {
         $(this).siblings('.body').slideToggle(1000);
-        $(this).find('.close').toggleClass('fa-angle-down').toggleClass('fa-angle-up');
+        $(this).find('.close').toggleClass('cls-down').toggleClass('cls-up');
         return false;
       });
       if ($(window).width() < 800) {
         $('.day-select.toggle > .body').slideUp(500);
-        $('.day-select.toggle .close').addClass('fa-angle-up');
+        $('.day-select.toggle .close').addClass('cls-up');
         $('.day-wrap').css('margin-bottom','35px');
       } else {
-        $('.day-select.toggle .close').addClass('fa-angle-down');
+        $('.day-select.toggle .close').addClass('cls-down');
       }
     }
   });

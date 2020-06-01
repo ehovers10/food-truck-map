@@ -27,13 +27,9 @@ global.buildMap = function (data, controls, config) {
 
   for (var p = 0; p < data.length; p++) {
 
-    //var truck = parseTruckData(data[p]);
     var truck = data[p];
     var lat = truck.lat;
     var lon = truck.lon;
-    // Markers
-    //var lat = truck.Latitude;
-    //var lon = truck.Longitude;
 
     truck.object.Notes = (truck.object.Notes == '') ? 'No details available' : truck.object.Notes;
     othersDetail += `
@@ -46,15 +42,14 @@ global.buildMap = function (data, controls, config) {
         alt: truck.object.name,
         desc: truck.label,
         icon: L.divIcon({
-          iconSize:     [50, 50], // size of the icon
-          iconAnchor:   [25, 25], // point of the icon which will correspond to marker's location
+          iconSize:     [50, 50],
+          iconAnchor:   [25, 25],
           className: `truck-icon`
-        }), //myIcon(truck.object.Days),
+        }), 
         riseOnHover: true
       }).bindPopup(truck.label).on('click',clickZoom).on('popupclose',goScope);
 
       dayGroups['All'].push(location);
-      //console.log([...truck.object.Days]);
       var days = truck.object.Days;
       for (var d = 0; d < days.length; d++) {
         (dayGroups[days[d]]) ? dayGroups[days[d]].push(location) : dayGroups[days[d]] = [location];
@@ -120,49 +115,6 @@ global.buildMap = function (data, controls, config) {
 
     return false;
   });
-}
-
-function parseTruckData(item) {
-  //Truck Details
-  var title = item.Title;
-  var slug = title.trim().replace(/\s/g,'-').toLowerCase();
-  var description = item.Description.replace(/<\/*p>/g,'');
-
-  var elements = (description.includes('<br />')) ? description.split('<br />') : description.split('\n');
-  var object = {'name':title}, label = `<h2>${title}</h2>`;
-  for (var i = 0; i < elements.length; i++) {
-    var item = elements[i].split("&gt;");
-    var key = item[0].trim().charAt(0).toUpperCase() + item[0].trim().slice(1);
-
-    switch (key) {
-      case 'Days':
-        if (item[1] == '&nbsp;' || item[1] == ' ') {
-          var val = '';
-          label += '';
-          break;
-        } else {
-          var daySet = new Set();
-          var dayArray = (item[1]) ? item[1].split(',') : [' '];
-          for (var d = 0; d < dayArray.length; d++) {
-            var day = (dayArray[d] == ' ') ? 'No day data' : dayArray[d].trim();
-            daySet.add(day);
-          }
-          var val = daySet;
-          label += `<p><b>${key}:</b> ${[...val].join(', ')}</p>`;
-          break;
-        }
-      case 'Menu':
-        var val = (item[1] == '&nbsp;' || item[1] == ' ') ? '' : item[1].replace(/\&nbsp;/g,'').trim();
-        label += (item[1] == '&nbsp;' || item[1] == ' ') ? '' : `<p><a href="${item[1].replace(/\&nbsp;/g,'').trim()}">Menu</a></p>`;
-        break;
-      default:
-        var val = (item[1] == '&nbsp;' || item[1] == ' ') ? '' : item[1].replace(/\&nbsp;/g,'').trim();
-        label += (item[1] == '&nbsp;' || item[1] == ' ') ? '' : `<p><b>${key}:</b> ${item[1].replace(/\&nbsp;/g,'').trim()}</p>`;
-    }
-    object[key] = val;
-  }
-
-  return {'object': object,'label': label};
 }
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})

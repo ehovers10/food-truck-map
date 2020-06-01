@@ -40,10 +40,10 @@ global.buildMap = function (data, controls, config) {
         alt: truck.object.name,
         desc: truck.label,
         icon: L.divIcon({
-          iconSize:     [50, 50], // size of the icon
-          iconAnchor:   [25, 25], // point of the icon which will correspond to marker's location
+          iconSize:     [50, 50],
+          iconAnchor:   [25, 25],
           className: `truck-icon`
-        }), //myIcon(truck.object.Days),
+        }), 
         riseOnHover: true
       }).bindPopup(truck.label).on('click',clickZoom).on('popupclose',goScope);
 
