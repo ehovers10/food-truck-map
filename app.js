@@ -11,6 +11,7 @@ var ParseData = require('./parser.js');
 var mifUser = process.env.MIF_USER;
 var mifPass = process.env.MIF_PASS;
 var mifAuth = Buffer.from(mifUser + ':' + mifPass).toString('base64');
+console.log(process.env.MIF_USER,process.env.MIF_PASS,mifAuth);
 
 var config = {
   project: {
@@ -49,6 +50,7 @@ app.post('/data', function(req,res) {
       headers: {'Authorization': `Basic ${mifAuth}`}
     })
     .then(response => {
+      console.log(JSON.stringify(response));
       var parsed = ParseData(response.data);
       res.json({'data': parsed, 'config': config});
     })
