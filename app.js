@@ -8,7 +8,6 @@ var fs = require('fs');
 
 var ParseData = require('./parser.js');
 
-//var mifAuth = 'ZWhvdmVyc3RlbjpEeWw0biZHdTU=';
 var mifUser = process.env.MIF_USER;
 var mifPass = process.env.MIF_PASS;
 var mifAuth = Buffer.from(mifUser + ':' + mifPass).toString('base64');
