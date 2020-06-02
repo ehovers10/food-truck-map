@@ -11,7 +11,7 @@ var ParseData = require('./parser.js');
 var mifUser = process.env.MIF_USER;
 var mifPass = process.env.MIF_PASS;
 var mifAuth = Buffer.from(mifUser + ':' + mifPass).toString('base64');
-console.log(process.env.MIF_USER,process.env.MIF_PASS,mifAuth);
+console.log(process.env);
 
 var config = {
   project: {
