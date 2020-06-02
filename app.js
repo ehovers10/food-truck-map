@@ -8,20 +8,23 @@ var fs = require('fs');
 
 var ParseData = require('./parser.js');
 
-var mifAuth = 'ZWhvdmVyc3RlbjpEeWw0biZHdTU=';
+//var mifAuth = 'ZWhvdmVyc3RlbjpEeWw0biZHdTU=';
+var mifUser = process.env.MIF_USER;
+var mifPass = process.env.MIF_PASS;
+var mifAuth = Buffer.from(mifUser + ':' + mifPass).toString('base64');
 
 var config = {
   project: {
-    id: '2572',
-    element: 'Points'
+    id: process.env.MIF_PROJECT,
+    element: process.env.MIF_ELEMENT
   },
   primaryMap: {
-    token: 'pk.eyJ1IjoiZWhvdmVyc3RlbiIsImEiOiJjazl6c3dmcjIxYXhwM2xwc2JqOHkyZ2JvIn0.jE9weoaWrmwsOHaaMS8OPw',
-    style: 'ehoversten/ckatrxi2307yk1ipe22lnni9i'
+    token: process.env.PRIMARY_TOKEN,
+    style: process.env.PRIMARY_STYLE
   },
   secondaryMap: {
-    token: 'pk.eyJ1IjoiZWhvdmVyc3RlbiIsImEiOiJjazl6c3dmcjIxYXhwM2xwc2JqOHkyZ2JvIn0.jE9weoaWrmwsOHaaMS8OPw',
-    style: 'ehoversten/ckavbtszn43x41is4e428vvrg'
+    token: process.env.SECONDARY_TOKEN,
+    style: process.env.SECONDARY_STYLE
   }
 }
 
