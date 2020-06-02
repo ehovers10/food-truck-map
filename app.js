@@ -9,7 +9,6 @@ var fs = require('fs');
 var ParseData = require('./parser.js');
 
 var mifAuth = Buffer.from(process.env.MIF_USER + ':' + process.env.MIF_PASS).toString('base64');
-console.log(process.env.MIF_USER, mifAuth);
 
 var config = {
   project: {
